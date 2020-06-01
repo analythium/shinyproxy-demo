@@ -27,4 +27,4 @@ docker run -p 4000:3838 analythium/shinyproxy-demo
 ```
 then visit `127.0.0.1:4000`.
 
-(c) Copyright Analythium Solutions Inc, 2017-2020.
+(c) Copyright Analythium Solutions Inc, 2019-2020 (MIT).
