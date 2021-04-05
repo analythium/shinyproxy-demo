@@ -17,7 +17,6 @@ RUN echo "local(options(shiny.port = 3838, shiny.host = '0.0.0.0'))" > /usr/lib/
 
 RUN mkdir /root/app
 
-# In a development environment we would use docker volumes instead
 COPY ./app /root/app
 
 EXPOSE 3838
