@@ -2,11 +2,14 @@
 
 Test developing a Shiny app in a Docker container and deploying onto a ShinyProxy DigitalOcean droplet.
 
+
+
 ## Run development environment
 
     docker-compose up --build
 
 then visit `http://localhost:4000`.  To develop, simply make changes to your Shiny app and then reload the page!
+
 
 
 ## Production build, test, and deploy
