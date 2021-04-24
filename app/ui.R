@@ -1,5 +1,5 @@
 ui <- fluidPage(
-  titlePanel("M2345 Intervals example with Shiny"),
+  titlePanel("Intervals example with Shiny"),
   sidebarLayout(
     sidebarPanel(
       sliderInput("bb_x", "Position along x axis",
