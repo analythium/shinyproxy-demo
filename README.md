@@ -21,10 +21,40 @@ To build the image from the Dockerfile, run
 sudo docker build -t analythium/shinyproxy-demo .
 ```
 
-Test locally
+
+
+## Develop and test locally
 ```bash
-docker run -p 4000:3838 analythium/shinyproxy-demo
+docker-compose up --build
 ```
-then visit `127.0.0.1:4000`.
+then visit `http://localhost:4000`.  To develop, simply make changes to your Shiny app and then reload the page!
+
+
+
+
+## Production build, test, and deploy
+Follow ALL of the steps below to deploy the latest version of your app...
+
+To build the image from the Dockerfile, run
+```bash
+sudo docker build -f prod.Dockerfile -t yourregistryusername/shinyproxy-test:prod .
+```
+
+then run locally with
+```bash
+docker run -p 4000:3838 yourregistryusername/shinyproxy-test:prod
+```
+and visit `http://localhost:4000` to double check it works.  Finally, deploy with
+
+```bash
+docker push yourregistryusername/shinyproxy-test:prod
+cd ~/programming/shinyproxy-1-click/digitalocean
+bash setup.sh -i ~/.ssh/id_rsa -s root@yourserveripaddress -f /path/to/application.yml
+```
+
+This should pull your new image onto the ShinyProxy server and restart the webserver so that it now appears in the list of shiny apps, fully updated.
+
+
+
 
 (c) Copyright Analythium Solutions Inc, 2019-2020 (MIT).

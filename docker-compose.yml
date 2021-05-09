@@ -1,0 +1,12 @@
+services:
+  dev:
+    image: mvlancellotti/shinyproxy-test:dev
+    container_name: shinyproxy-test-container
+    restart: always
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    ports:
+      - 4000:3838
+    volumes:
+      - ./app:/root/app
